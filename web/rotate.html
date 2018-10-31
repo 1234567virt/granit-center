@@ -1,0 +1,86 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+    #wrapper{
+        position: relative;
+       margin:auto;
+width: 800px;
+height: 560px;
+border:1px solid red;
+overflow: hidden;
+    }
+#mill{
+    width: 363px;
+    height: 407px;
+    position:absolute;
+    top:0;
+    margin:auto;
+        left:0;
+        right: 0;
+        bottom:0;
+        overflow: hidden;
+        background-color: blue;
+
+}
+#winger{
+    width: 200px;
+    height: 184px;
+    position:absolute;
+    top:139px;
+    border-radius:15px;
+        left:5px;
+        animation-duration: 4.1s;/* длительность одного действия*/
+       animation-iteration-count:infinite;/*сколько раз происходить действия*/
+       animation-timing-function: linear;/*как плавно крутиться*/
+        right: 0;
+        bottom:0;
+        margin:auto;
+        animation-name:q;
+        background-color: black;
+}
+@keyframes q{
+    0%{transform: rotate(0deg);opacity: .9;}
+    25% {transform:rotate(90deg);opacity:.6;background-color: gray; }
+    50%{transform:rotate(180deg);opacity:.3;background-color: red;}
+    100%{transform: rotate(360deg);opacity:.0;background-color: white;}
+
+}
+#cloud{
+    position:absolute;
+    top:10px;
+    left:-100px;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    animation-name:cloud;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    width: 50px;
+    height: 20px;
+    background-color: beige;
+}
+@keyframes cloud{
+    0%{left:0px;}
+    25%{left:90px;top:40px;}
+    50%{left:180px;top:20px}
+    100%{left:360px;top:100px}
+}
+</style>    
+</head>
+<body>
+    <div id="wrapper">
+        <div id="mill">
+            <div id="cloud"></div>
+        </div>
+        <div id="winger"></div>
+ 
+    </div>
+</body>
+</html>
