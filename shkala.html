@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    #wrapper{
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        position: absolute;
+        width: 15px;
+        height: 150px;
+        background: transparent;
+        border:1px solid red;
+        margin:auto;
+    }
+    
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id='wrapper' style="height: 150px">
+    
+    </div>
+    <script>
+      var  i=0;
+      var fon=document.getElementById('wrapper');
+
+function height(fon){
+this.fon=fon;
+this.hei=function(){
+   // this.heig=this.fon.style.height;
+   //return this.h=parseInt(this.heig); 
+   this.heig=this.fon.offsetHeight;
+   return this.heig;
+                   }
+}
+   
+function s(i,f, fon){
+if(f>i){
+fon.style.background='black';
+fon.style.height=i+'px';
+i=i+1; 
+    setTimeout(s,100,i,f,fon);
+        }
+}
+
+ load=new height(fon);
+ f=load.hei();
+s(i,f,fon);
+ 
+
+    </script>
+</body>
+</html>

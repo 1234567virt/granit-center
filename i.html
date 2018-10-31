@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="jquery.js" type="text/javascript"></script>
+  <style>
+      body{
+          font-size:18px;
+          font-family:Arial, Helvetica, sans-serif;
+background: url('background.png')
+      }
+      a{
+          color:white;
+          padding: 3px 5px;
+       
+        text-decoration: none;
+      }
+
+  a:hover{
+      border:2px solid silver;
+      border-radius: 4px;
+      text-decoration: none;
+      color:white;
+      transition: border 1s;
+  }
+
+
+div a{
+    margin-right: 15px;
+}
+  #menu{
+      width: 600px;
+      height: 30px;
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:auto;
+  
+  }
+  .blue{
+      color:blue;
+      font-weight: 400;
+
+      border-bottom:1px solid blue;
+  }
+  </style>
+    <script></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="menu"> 
+        <a href="#" id="n1" onclick="clics('n1')">Вчера</a>
+        <a href="#" id="n2">Сегодня</a>
+        <a href="#" id="n3">Завтра</a>
+        <a href="#" id="n4">Неделя</a>
+        <a href="#" id="n5">Месяц</a>
+        <a href="#" id="n6">2018</a>
+    </div>
+    <script>
+        function clics(id){
+   // $('#menu a').css({'border':'1px solid red'});
+    var id=document.getElementById(id);
+    id.classList.add('blue');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form>
+<input type='text' id='val' value='' ><br>
+<input type="button" onclick="values(x,value)"  value="1">
+<input type="button" onclick="values(x,value)"  value="2">
+<input type="button" onclick="values(x,value)"  value="3"><br>
+<input type="button" onclick="values(x,value)"  value="4">
+<input type="button" onclick="values(x,value)"  value="5">
+<input type="button" onclick="values(x,value)"  value="6"><br>
+<input type="button" onclick="values(x,value)"  value=7>
+<input type="button" onclick="values(x,value)"  value="8">
+<input type="button" onclick="values(x,value)"  value="9"><br>
+<input type="button" onclick="values(x,value)"  value="0">
+<input type="button" onclick="values(x,value)"  value="+">
+<input type="button" onclick="values(x,value)"  value="-"><br>
+<input type="button" onclick="values(x,value)"  value="/">
+<input type="button" onclick="values(x,value)"  value="*">
+<input type="button" onclick="press(x)" name='ok'  id='ok' value="enter">
+        </form>
+        <script>
+          
+        // function plus(x,y){
+        //     return parseInt(x)+parseInt(y);
+        // }
+        // function minus(x,y){
+        //     return parseInt(x)-parseInt(y);
+        // }
+        // function del(x,y){
+        //     parseInt(x)/parseInt(y)
+        // }
+        // function ymn(x,y){
+        //     parseInt(x)/parseInt(y)
+        // }
+
+        // function oper(o,x,y){
+        //   switch(o)  {
+        //    case '+':
+        //     return parseInt(x)+parseInt(y);
+        //     break;
+        //     case '-':
+        //   return parseInt(x)-parseInt(y);
+        //     break;
+        //     case '/':
+        //     parseInt(x)/parseInt(y);
+        //     break;
+        //     case '*':
+        //     parseInt(x)*parseInt(y);
+        //     break;
+        // }
+
+        // }
+var x=document.getElementById('val');
+        
+function values(x,l){
+ if((l=='*' || l=='/' || l==0) && x.value==''){
+    x.value='';
+    }
+    else if(x.value!=l) {
+    x.value=x.value+l;
+    }
+}
+
+function oper(x,t){
+    var massiv=[];
+    massiv[0]=x.substr(x.indexOf(t)+1);
+    massiv[1]=x.substr(0,x.indexOf(t));
+    return massiv;
+ }
+
+function press(x){
+var y=x.value;
+     
+  if(y!=""){
+    if(y.indexOf('-')>0){
+    massiv=oper(y,'-');
+    x.value=parseInt(massiv[1])-parseInt(massiv[0]);
+    //x.value=parseInt(y);
+    //console.log(typeof(y));
+    }
+
+    else if(y.indexOf('+')>0){
+    massiv=oper(y,'+');
+    x.value=parseInt(massiv[1])+parseInt(massiv[0]);
+    }
+
+    else if(y.indexOf('*')>0){
+    massiv=oper(y,'*');
+    x.value=parseInt(massiv[1]) * parseInt(massiv[0]);  
+    }
+
+    else{
+    massiv= oper(y,'/');
+    x.value=parseInt(massiv[1]) / parseInt(massiv[0]);
+    }
+ }
+else{
+     alert('ошибка');
+ }  
+}
+</script>
+    </div>
+</body>
+</html>
