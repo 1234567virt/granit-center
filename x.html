@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #wrapper{
+          /*  left:0;
+            right: 0;
+            top:0;
+            bottom: 0;
+            position: relative;
+            */
+            border:1px solid black;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+        }
+        .kv{
+            width: 60px;
+            height: 73px;
+
+            border:1px solid black;
+
+        }
+        #kvs{
+            width: 60px;
+            height: 73px;
+
+            border:1px solid black;
+
+        }
+        .kv2{
+            width: 60px;
+            height: 73px;
+          
+            border:1px solid black;
+            background:black;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        var sm=0; 
+        var y=0;
+    function doska(sm,y){
+       var shaxmat=document.getElementById('wrapper');
+     for(var i=0; i<=8;i++){
+            var figura=document.createElement('div');
+
+          if(i%2==1){
+                figura.className='kv';
+          }
+
+      else{
+       figura.className='kv2';
+      }
+      if(i==7 && y!=7){
+var sh=document.getElementsByClassName('kv2');
+console.log(sm);
+i=0;
+y=y+1;
+sm=sm+60;
+sh.style.marginLeft=sm+'px';
+console.log(i,y);
+}
+        shaxmat.appendChild(figura);
+    }
+    }
+
+  
+    doska(sm,y);
+    </script>
+</body>
+</html>
