@@ -1,0 +1,99 @@
+<meta charset="UTF-8">
+<script>
+
+function getRandomInt(min,max){
+    var n=5;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getCard(){
+    var cards=['6','7','8','9','10','J','Q','K','A'];
+return cards[getRandomInt(0,cards.length-1)];
+}
+
+function getSum(arr){
+    var result=0;
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]=='J' || arr[i]=='Q' ||  arr[i]=='K'){
+           result=result+10;
+        }
+        else if(arr[i]!='A'){
+            result=result+parseInt(arr[i]);
+        }
+    }
+
+    for(var count=0;count<arr.length;count++){
+        if(result>10 && arr[count]=='A'){
+            result=result+1;
+        }
+        else if(result<10 && arr[count]=='A'){
+            result=result+11;
+        }
+    
+}
+return parseInt(result);
+}
+var dealer=[getCard()];
+var player=[getCard(),getCard()];
+var result_diler=getSum(dealer);
+var result_play=getSum(player);
+var answer='';
+var count=0;
+function getStatus(){
+return result="Дилер: " + dealer.join(" ") + "-" + result_diler +" очков " + " Игрок: " + player.join(" ")+"-"+result_play+" очков";
+}
+
+function result_dil(){
+       while(result_diler<17){
+       dealer.push(getCard());
+       result_diler=getSum(dealer);
+    }
+   if(result_diler==17){
+      result_diler='Дилер выиграл';
+        
+   }
+   else if(result_diler>21){
+      result_diler='У Дилера перебор';
+          
+    }
+    return result_diler;
+}
+
+  function result(){
+   do
+  {
+    if(result_play==21){
+         alert('Вы выиграли у вас '+result_play+' очков');
+        break;
+    }
+    else if(result_play>21){
+        alert('У вас перебор');
+        break;
+    }
+    else{
+    answer=prompt(getStatus()+" 1 или 0");
+        if(answer=='1'){
+        player.push(getCard());
+        result_play=getSum(player);
+    }
+
+        else{
+            result_diler=result_dil();
+            if(result_play<result_diler && result_diler<22){
+                alert(result_diler+' Дилер выиграл '+result_play );
+                }
+            else if (result_play>result_diler){
+                alert(result_diler+' Вы выиграли '+result_play);
+                }
+                else {
+                   alert(result_diler);
+                }
+        }
+    }
+  }
+    while(answer=='1')
+ }
+
+result();
+
+</script>

@@ -1,0 +1,19 @@
+#sheik{
+    width: 150px;
+    height: 150px;
+    background:red;
+  
+    position: absolute;
+    transition:all .3s;
+   
+  
+}
+#tchk{
+    width: 150px;
+    height: 150px;
+    background:green;
+  
+    position: absolute;
+  top:100px;
+  left:300px;  
+}

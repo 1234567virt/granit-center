@@ -1,0 +1,69 @@
+<!DOCTYPE html> <html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ #wrapper{
+     border:1px solid black;
+     width: 900px;
+     height: 550px;
+     overflow: hidden;
+     position: relative;
+     margin: auto;
+ }
+ #kv1,
+ #kv2{
+     width: 100px;
+     height: 100px;
+     position: absolute;
+
+ }
+ #kv1{
+     background-color: red;
+    border:1px solid black;
+animation-name:kv1;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+
+left:0;
+
+top:0;
+margin:auto;
+}
+ #kv2{
+     background-color: green;
+     bottom:0;
+animation-name:kv2;
+animation-duration: 4s;
+animation-iteration-count: infinite;
+
+margin: auto;
+right:0 ;
+
+
+ }
+ @keyframes kv1{
+     0%{left:0px;top:0px;transform:rotate(0deg);}
+     25%{left:150px;top:150px;transform:rotate(90deg);}
+     50%{left:200px;top:300px;transform:rotate(180deg);}
+     75%{left:300px;top:400px;transform:rotate(270deg);}
+     100%{left:500px;top:500px;transform:rotate(360deg);}
+ }
+ @keyframes kv2{
+    0%{bottom:0px;right: 0px;transform:rotate(0deg);}
+     25%{bottom: 150px;right:150px;transform:rotate(90deg)}
+     50%{bottom:300px;right:200px;transform:rotate(180deg);}
+     75%{bottom:400px;right:300px;transform:rotate(270deg);}
+     100%{bottom:500px;right:500px;transform:rotate(360deg);}
+ }
+ </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="kv1"></div>
+        <div id="kv2"></div>
+    </div>
+</body>
+</html>

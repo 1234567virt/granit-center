@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <title>Document</title>
+   <style>
+   #wrapper{
+       width:100px;
+       height:100px;
+       top:0;
+       left:0;
+       right: 0;
+       bottom: 0;
+       background:green;
+       position: absolute;
+       margin: auto;
+       transition:all 10s;
+   }
+   #load{
+       width:50px;
+       height:50px;
+       top:0;
+       left:0;
+       background:silver;
+       position: relative;
+       border-radius:30px;
+      
+   }
+   </style>
+   
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='load'></div>
+        </div>
+        <script>
+            var x=0;
+            var y=0;
+function loads(x,y){
+    var load=document.getElementById('load');
+    var wrapper=document.getElementById('wrapper');
+
+    //var widthLoad=load.offsetWidth;
+    //var heightLoad=load.offsetHeight;
+
+    var widthWrapper=wrapper.offsetWidth;
+    var heightWrapper=wrapper.offsetHeight;
+
+
+//load.style.top=y+'px';
+if(x<=widthWrapper/2 && y==0){
+// load.style.left=x+'px';
+x=x+10;
+}
+else if(x>widthWrapper/2 && y<heightWrapper/2){
+    // load.style.top=y+'px';
+    y=y+10; 
+}
+else if(x>0 && y==heightWrapper/2){
+    x=x-10;
+    // load.style.left=x+'px';
+    // load.style.top=y+'px';
+}
+else{
+    y=0;
+    //x=0;
+    // load.style.left=x+'px';
+    // load.style.top=y+'px';
+}
+if(x<=widthWrapper/2){
+load.style.left=x+'px';
+load.style.top=y+'px';
+}
+setTimeout(loads,1000,x,y);
+
+}
+        loads(x,y);
+        </script>
+  
+</body>
+</html>
